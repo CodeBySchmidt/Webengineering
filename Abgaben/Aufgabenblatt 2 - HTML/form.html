@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <div style="border-style: solid; padding: 15px; text-align:left; width: max-content;">
+
+       <h1>Form</h1>
+
+       <!-- Name -->
+       <div>
+        <label for="name">Name</label>
+        <form action="/register" method="post" style="margin-left: 25px;">
+            <input id="name" type="text" placeholder="Max Mustermann">
+        </form> 
+       </div>
+
+       <!-- Email -->
+       <div>
+        <label for="email">Email</label>        
+        <form action="/register" method="post" style="margin-left: 25px;">
+            <input id="email" type="text" placeholder="max.mus@gmail.com">
+        </form>
+       </div>
+
+       <!-- Passwort -->
+       <div>
+        <label for="password">Password</label>
+        <form action="/register" method="post" style="margin-left: 25px;">
+            <input id="password" type="text" placeholder="************">
+        </form>
+       </div>
+
+       <!-- Datum -->
+       <div>
+        <label for="date">Birthday</label>
+        <form action="/register" method="post" style="margin-left: 25px;">
+            <input id="date" type="date" value="1990-11-02" style="width: 165px;">
+        </form>
+       </div>
+
+       <!-- Remember Me -->
+       <div>
+        
+        <form action="/register" method="post">
+            <label for="checkbox">Remember</label>
+            <input id="checkbox" type="checkbox" style="margin-left: 105px;">
+        </form>
+       </div>
+
+       <!-- Submit -->
+       <div>
+        <form action="/register" method="post">
+            <input id="button" type="button" value="Submit" style="margin-top: 50px;">
+        </form> 
+       </div>
+
+    </div>
+    
+</body>
+</html>
