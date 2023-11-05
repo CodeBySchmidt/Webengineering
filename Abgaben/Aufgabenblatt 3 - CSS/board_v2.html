@@ -1,0 +1,189 @@
+<!-- Aufgabenblatt 03, Aufgabe 3.2: Anne Kathrin Schmidt - 11141929 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board v2</title>
+
+    <style>
+
+        :root {
+            --schachbrett-groesse: 500px;
+            --schachbrett-felderanzahl: 10;
+        }
+
+        .schachbrett {
+            border: 2px;
+            border-style: solid;
+            display: grid;
+            grid-template-columns: repeat( var(--schachbrett-felderanzahl), 1fr);
+            width: var(--schachbrett-groesse);
+            height: var(--schachbrett-groesse);
+        }
+
+        .feld-schwarz{
+            width: calc(var(--schachbrett-groesse)/ var(--schachbrett-felderanzahl));
+            height: calc(var(--schachbrett-groesse) / var(--schachbrett-felderanzahl));
+            background-color: black;
+        }
+
+        .feld-weiß{
+            width: calc(var(--schachbrett-groesse)/ var(--schachbrett-felderanzahl));
+            height: calc(var(--schachbrett-groesse) / var(--schachbrett-felderanzahl));
+            background-color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+  <div class="schachbrett">
+
+    <!-- 1 Spalte -->
+    <div>
+      <div class="feld-schwarz"></div> 
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+    </div>
+
+    <!-- 2 Spalte -->
+    <div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+    </div>
+
+    <!-- 3 Spalte -->
+    <div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+    </div>
+
+    <!-- 4 Spalte -->
+    <div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+    </div>
+
+    <!-- 5 Spalte -->
+    <div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+    </div>
+
+    <!-- 6 Spalte -->
+    <div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+    </div>
+
+    <!-- 7 Spalte -->
+    <div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+    </div>
+
+    <!-- 8 Spalte -->
+    <div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+    </div>
+
+    <!-- 9 Spalte -->
+    <div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+    </div>
+
+    <!-- 10 Spalte -->
+    <div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+      <div class="feld-weiß"></div>
+      <div class="feld-schwarz"></div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
