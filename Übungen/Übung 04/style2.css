@@ -1,0 +1,37 @@
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.button{
+    position: relative;
+    scale: 3;
+    background-color: antiquewhite;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.button:hover{
+    border: 1px;
+    border-style: solid;
+    border-color: gray;
+    background-color: bisque;
+    box-shadow: 0px 0px 4px  rgba(0, 0 , 0, 0.5);
+    text-decoration: underline;
+
+}
+
+.button:active{
+    background-color: blue;
+    position: relative;
+    transform: rotateZ(90deg)
+    scale(3);
+    transition-delay: 30ms;
+}
