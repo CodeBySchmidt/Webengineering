@@ -5,19 +5,16 @@ body{
 
 .container{
     display: grid;
-    gap: 0.5rem;
-    height: 100vh;
-    
-    /* grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr); */
 
-    grid-template-areas: 
+     grid-template-areas: 
     "header header header"
     "column1 column2 column3"
     "column1 column2 column3"
-    "column1 column2 column3"
-    "footer footer footer";
+    "column1 column2 column3"    
+    "footer footer footer"; 
  
+    gap: 0.5rem;
+    height: 100vh;
 }
 
 .container div{
@@ -29,12 +26,12 @@ body{
 }
 
 .header {
-    /* grid-column: 1/span 3; */
+     /* grid-column: 1 / span 3; */
     grid-area: header;
 }
 
 .column1 {
-    /* grid-row: 2/span 3; */
+    /* grid-row: 2 / span 3; */
     grid-area: column1;
 }
 
@@ -49,6 +46,6 @@ body{
 }
 
 .footer {
-    /* grid-column: 1/span 3; */
-    grid-area: footer;
+    grid-column: 1/span 3;
+    /* grid-area: footer; */
 }

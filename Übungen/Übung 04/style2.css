@@ -25,13 +25,12 @@ body{
     background-color: bisque;
     box-shadow: 0px 0px 4px  rgba(0, 0 , 0, 0.5);
     text-decoration: underline;
-
 }
 
 .button:active{
     background-color: blue;
     position: relative;
-    transform: rotateZ(90deg)
+    transform: rotateZ(360deg)
     scale(3);
     transition-delay: 30ms;
 }
