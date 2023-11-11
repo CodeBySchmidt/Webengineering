@@ -26,41 +26,48 @@
 
     <style>
 
+        /* Blauer Kreis kommt von unten */
         .logo-container:hover .circle .blue{
             opacity: 1;
             transition-duration: 0.3s;
             transform: translate(0px, -35px);
         }
 
+        /* Grüner Kreis kommt von rechts oben */
         .logo-container:hover .circle .green{
             opacity: 1;
             transition-duration: 0.3s;
             transform: translate(-30px, 30px);
         }
 
+        /* Roter Kreis kommt von links oben*/
         .logo-container:hover .circle .red{
             opacity: 1;
             transition-duration: 0.3s;
             transform: translate(30px, 30px);
         }
 
+        /* Logo Text (Wortmarke) rotiert rein */
         .logo-container:hover .text{
             opacity: 1;
             transition-duration: 0.3s;
             transform: rotateZ(0deg);
         }
 
+        /* Hovertext verblasst */
         .logo-container:hover .hoverText{
             opacity: 0;
             transition-duration: 0.3s;
         }
 
+        /* Skalierung vom Logo Container beim Hovern */
         .logo-container:hover {
             opacity: 1;
             transition-duration: 0.3s;
             transform: scale(1.5);
         }
 
+        /* Layout  */
         .logo-container {
             margin-top: 200px;
             display: grid;
@@ -69,14 +76,16 @@
             transition: 0.3s;
         }
 
+        /* Text = Hover Me */
         .hoverText {
             padding-top: 85px;
             padding-left: 65px;
-            
+
             transition: 1.5s;
             opacity: 1;
         }
 
+        /* Logo Text (Wortmarke) */
         .text {
             text-align: center;
             font-family: 'Titillium Web', sans-serif;
@@ -88,9 +97,9 @@
             margin-top: -25px;
             transform: rotateZ(350deg);
             transition: 0.3s;
-            
         }
 
+        /* Kreis */
         .circle {
             width: 100px;
             height: 100px;
@@ -100,6 +109,7 @@
             opacity: 0;
         }
 
+        /* Kreise mit Farbe und Positionen */
         .bg {
             background-color: bisque;
             height: 200px;
@@ -142,6 +152,7 @@
             top: -210px;
             left: 110px;
         }
+        
     </style>
 </body>
 
