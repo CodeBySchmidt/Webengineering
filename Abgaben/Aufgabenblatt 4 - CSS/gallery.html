@@ -1,0 +1,135 @@
+<!-- Aufgabenblatt 04, Aufgabe 4.3: Anne Kathrin Schmidt - 11141929 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+
+<body>
+
+    <div class="container custom-scrollbar">
+        <div class="container-item">
+            <img src="https://picsum.photos/id/1/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/2/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/3/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/4/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/5/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/6/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/7/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/8/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/9/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/10/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/11/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/12/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/13/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/14/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/15/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/16/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/17/320/180" alt="">
+        </div>
+        <div class="container-item">
+            <img src="https://picsum.photos/id/18/320/180" alt="">
+        </div>
+    </div>
+
+    <style>
+        body {
+            height: 100vh;
+            background-color: antiquewhite;
+        }
+
+        .container {
+            display: grid;
+            place-items: center;
+
+            height: 80%;
+            width: 1000px;
+
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            gap: 5px;
+
+            margin: 0 auto;
+            padding: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+
+            box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);            
+            background-color: whitesmoke;
+            
+        }
+
+        .container-item {
+            /* border: 1px solid #000; */
+            
+        }
+
+        img {
+            border-radius: 12px;
+            transition: 0.1s;
+        }
+
+        .custom-scrollbar {
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #aaaaaa;
+            border-radius: 5px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background-color: whitesmoke;
+        }
+
+        img:hover{
+            transition: 0.4s;
+            transform: scale(1.2);
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+        }
+
+    </style>
+</body>
+
+</html>
