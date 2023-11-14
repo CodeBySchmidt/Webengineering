@@ -68,13 +68,13 @@
             }
 
             .container div {
-                font-size: 60px;               
+                font-size: 40px;               
             }
 
         }
 
         /* Bildschirmbreite kleiner als 767px und größer als 480px */
-        @media (max-width: 767px) and (min-width: 480px) {
+        @media (min-width: 480px) and (max-width: 768px) {
             
             .container {
                 display: grid;
@@ -91,7 +91,7 @@
                     "navigation main main"
                     "navigation main main"
                     "news news news"
-                    "contact contact contact"s
+                    "contact contact contact"
                     "footer footer footer";
 
                 gap: 1rem;
@@ -131,7 +131,7 @@
                     "contact contact contact2 contact2"
                     "contact contact contact2 contact2"
                     "footer footer footer footer";
-
+                    
                 gap: 1rem;
                 height: 100vh;
             }
@@ -151,7 +151,7 @@
         body {
             margin: 0px;
             padding: 0px;
-            font-size: 40px;
+            font-size: 30px;
         }
 
         .container div {
@@ -185,9 +185,8 @@
         }
 
         .footer {
-            grid-column: footer;
+            grid-area: footer;
             background-color: lightgreen;
-
         }
 
     </style>
