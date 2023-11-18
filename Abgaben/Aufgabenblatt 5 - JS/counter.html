@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    
+</head>
+
+<body>
+    <div class="container-counter">
+        <button onclick="increment()">Up</button>
+        <div id="counter">0</div>
+        <button onclick="decrement()">Down</button>
+    </div>
+
+    <div class="container-counter-extra">
+        <button id="start" onclick="startCounter()">Start</button>
+        <button id="stop" onclick="stopCounter()">Stop</button>
+        <p id="inputText">Speed [ms]</p>
+        <input type="number" id="speedInput" placeholder="Speed (1-1000ms)" min="1" max="1000">
+        <button id="reset" onclick="resetCounter()">Reset</button>
+    </div>
+
+    <style>
+
+        /* Generelle Settings */
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            display: grid;
+            place-items: center;
+            height: 80vh;
+        }
+
+        #counter {
+            font-size: 3em;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        button {
+            font-size: 1em;
+            height: 30px;
+            width: 60px;
+            cursor: pointer;
+        }
+
+        /* 1. Counter */
+
+        .container-counter{
+            display: flex;
+            place-items: center;
+
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+            border-radius: 30px;
+            background-color: gainsboro;
+            box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 2. Counter */
+
+        .container-counter-extra{
+            display: grid;
+            
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            
+
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+
+            border-radius: 30px;
+            background-color: gainsboro;
+            box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.5);
+
+        }
+
+        #start{
+            grid-column-start: 1;
+            grid-row-end: 1;
+        }
+
+        #stop{
+            grid-column-start: 3;
+            grid-row-end: 1;
+        }
+
+        #inputText{
+            grid-column-start: 2;
+            grid-row-end: 2;
+
+            font-size: 0.8rem;
+        }
+
+        #speedInput{
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 2;
+
+            height: max-content; 
+        }
+
+        #reset{
+            grid-column-start: 2;
+            grid-row-end: 4; 
+        }
+
+    </style>
+
+    <script>
+        var count = 0;
+        var intervalId;
+
+        function updateCounter() {
+            document.getElementById('counter').innerText = count;
+        }
+
+        function increment() {
+            count++;
+            updateCounter();
+        }
+
+        function decrement() {
+            count--;
+            updateCounter();
+        }
+
+        function startCounter() {
+            var speed = document.getElementById('speedInput').value || 1000;
+            intervalId = setInterval(increment, speed);
+        }
+
+        function stopCounter() {
+            clearInterval(intervalId);
+        }
+
+        function resetCounter() {
+            count = 0;
+            updateCounter();
+        }
+    </script>
+
+</body>
+</html>
