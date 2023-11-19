@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div id="colorBox" class="border"></div>
+        <div class="userControll">
+            <button id="changeColor" onclick="changeColor()">ChangeColor</button>
+            <button id="toggleBorder" onclick="toggleBorder()">Toggle Border</button>
+        </div>
+
+    </div>
+
+    <style>
+
+        body{
+            display: grid;
+
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        .container{
+            display: grid;
+            place-self: center;
+        }
+
+        #colorBox{
+            height: 500px;
+            width: 500px;
+            background-color: lightsalmon;
+            border-radius: 40px;
+            box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .border{
+            border: 4px;
+            border-style: solid;
+            border-color: black;
+        }
+
+        .userControll{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            margin-top: 30px;
+        }
+
+        button{
+            font-size: 1em;
+            height: 30px;
+            width: max-content;
+            cursor: pointer;
+        }
+
+        #toggleBorder{
+            grid-column-start: 4;
+        }
+
+    </style>
+
+
+    <script>
+        
+        function toggleBorder() {
+
+            var colorBox = document.getElementById("colorBox");
+
+            // if (colorBox.style.border !== "none"){
+            //     colorBox.style.border = "none";
+            // }else{
+            //     colorBox.style.border = "1px solid black";
+            // }
+
+            colorBox.classList.toggle("border");
+
+        }
+
+        function changeColor() {
+
+            var colorBox = document.getElementById("colorBox");
+
+            var randomR = Math.floor(Math.random() * 256);
+            var randomG = Math.floor(Math.random() * 256);
+            var randomB = Math.floor(Math.random() * 256);
+
+            colorBox.style.backgroundColor = "rgb(" + randomR + "," + randomG + "," + randomB + ")";
+            
+            colorBox.style.transition = "0.4s";
+        }
+
+    </script>
+</body>
+</html>

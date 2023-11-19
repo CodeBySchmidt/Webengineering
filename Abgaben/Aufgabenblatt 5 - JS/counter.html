@@ -1,3 +1,5 @@
+<!-- Aufgabenblatt 05, Aufgabe 5.1: Anne Kathrin Schmidt - 11141929 -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,19 +10,24 @@
 </head>
 
 <body>
-    <div class="container-counter">
-        <button onclick="increment()">Up</button>
-        <div id="counter">0</div>
-        <button onclick="decrement()">Down</button>
+    <div class="content">
+
+        <div class="container-counter">
+            <button onclick="increment()">Up</button>
+            <div id="counter">0</div>
+            <button onclick="decrement()">Down</button>
+        </div>
+    
+        <div class="container-counter-extra">
+            <button id="start" onclick="startCounter()">Start</button>
+            <button id="stop" onclick="stopCounter()">Stop</button>
+            <p id="inputText">Speed [ms]</p>
+            <input type="number" id="speedInput" placeholder="Speed (1-1000ms)" min="1" max="1000">
+            <button id="reset" onclick="resetCounter()">Reset</button>
+        </div>
+
     </div>
 
-    <div class="container-counter-extra">
-        <button id="start" onclick="startCounter()">Start</button>
-        <button id="stop" onclick="stopCounter()">Stop</button>
-        <p id="inputText">Speed [ms]</p>
-        <input type="number" id="speedInput" placeholder="Speed (1-1000ms)" min="1" max="1000">
-        <button id="reset" onclick="resetCounter()">Reset</button>
-    </div>
 
     <style>
 
@@ -30,8 +37,16 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             display: grid;
-            place-items: center;
-            height: 80vh;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        .content{
+            display: grid;
+            place-self: center;
+            gap: 20px;
         }
 
         #counter {
