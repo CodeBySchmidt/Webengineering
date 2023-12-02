@@ -9,41 +9,41 @@
 
 <body>
 
-    <div class="container" id="gradientContainer">
+    <div class="container light-theme">
         <div class="calculator">
             <div class="display">
                 <div class="lines">
-                    <div class="input" id="input">0</div>
-                    <div class="result" id="result">0</div>
+                    <input type="text" id="previousOutput" disabled>
+                    <input type="text" id="currentOutput" disabled>
                 </div>
-                <button id="del">DEL</button>
+                <button id="del" onclick="clearOutput()">DEL</button>
             </div>
             <div class="layout">
                 <div class="nummbers">
-                    <button id="one">1</button>
-                    <button id="two">2</button>
-                    <button id="three">3</button>
-                    <button id="for">4</button>
-                    <button id="five">5</button>
-                    <button id="six">6</button>
-                    <button id="seven">7</button>
-                    <button id="eight">8</button>
-                    <button id="nine">9</button>
-                    <button id="dot">.</button>
-                    <button id="zero">0</button>
-                    <button id="equal">=</button>
+                    <button onclick="appendToOutput('1')" id="one">1</button>
+                    <button onclick="appendToOutput('2')" id="two">2</button>
+                    <button onclick="appendToOutput('3')" id="three">3</button>
+                    <button onclick="appendToOutput('4')" id="for">4</button>
+                    <button onclick="appendToOutput('5')" id="five">5</button>
+                    <button onclick="appendToOutput('6')" id="six">6</button>
+                    <button onclick="appendToOutput('7')" id="seven">7</button>
+                    <button onclick="appendToOutput('8')" id="eight">8</button>
+                    <button onclick="appendToOutput('9')" id="nine">9</button>
+                    <button onclick="appendToOutput('.')" id="dot">.</button>
+                    <button onclick="appendToOutput('0')" id="zero">0</button>
+                    <button onclick="calculateResult()" id="equal">=</button>
                 </div>
                 <div class="symbols">
-                    <button id="divison">/</button>
-                    <button id="minus">-</button>
-                    <button id="plus">+</button>
-                    <button id="multiplication">*</button>
+                    <button onclick="appendToOutput('/')" id="divison">/</button>
+                    <button onclick="appendToOutput('-')" id="minus">-</button>
+                    <button onclick="appendToOutput('+')" id="plus">+</button>
+                    <button onclick="appendToOutput('*')" id="multiplication">*</button>
                 </div>
             </div>
         </div>
 
         <div class="sun">
-            <button id="sun" onclick="changeColor()">&#9728;</button>
+            <button id="sun" onclick="toggleTheme()">&#9728;</button>
         </div>
 
     </div>
@@ -54,8 +54,16 @@
 
     <style>
         :root {
-            /* --farbe: linear-gradient(130deg, #00c8ff 20%, #1c29e0 50%, #000530 100%); */
-            --buttonColor: rgb(0, 15, 148);
+            /* Light Theme */
+            --gradient1: linear-gradient(130deg, #FDBB2D 20%, rgba(162, 28, 224, 0.849) 50%, #3A1C71 100%);
+            --gradient1ButtonColor: #001aff;
+            --gradient1BorderColor: #650079;
+
+            /* Dark Theme */
+            --gradient2: linear-gradient(130deg, #c300ff 20%, rgba(28, 171, 227, 0.932) 50%, rgb(0, 11, 114) 100%);
+            --gradient2ButtonColor: #650079;
+            --gradient2BorderColor: #001aff;
+
         }
 
         body {
@@ -64,41 +72,32 @@
             margin: 0px;
         }
 
-        
         .container {
             display: grid;
             place-content: center;
             height: 100vh;
             padding: 0px;
             margin: 0px;
-            transition: 5s;
-        }
 
-        #gradientContainer{
-            background: linear-gradient(130deg, #00c8ff 20%, #1c29e0 50%, #000530 100%);
-            transition: 5s;
         }
-
 
         .calculator {
             display: grid;
             padding: 10px;
             box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.5);
+
         }
 
         .display {
             display: flex;
             place-content: end;
-            background-color: black;
-            opacity: 0.7;
+            background-color: rgba(0, 0, 0, 0.75);
             border-radius: 5px;
-            padding: 5px;
-            padding-top: 15px;
+            padding: 10px;
         }
 
         .lines {
-            background-color: #FDBB2D;
-            /* width: 200px; */
+            display: grid;
         }
 
         .layout {
@@ -128,8 +127,6 @@
             left: 40px;
         }
 
-
-
         button {
             font-size: 1.2em;
             height: 40px;
@@ -138,38 +135,18 @@
             border-radius: 5px;
             cursor: pointer;
             background-color: rgba(255, 255, 255, 0.6);
-            transition: 0.5s;
+
         }
 
-        button:hover {
-            transition: 0s;
-            border: 2px;
-            border-style: solid;
-            border-color: var(--buttonColor)
-        }
-
-        button:active {
-            /* transition: 0.5s; */
-            /* transition-duration: 0.5s; */
-            background-color: #ffffff;
+        .symbols button {
+            width: 30px;
         }
 
         #del {
             font-size: 0.7em;
             font-weight: bold;
-            color: white;
             width: 40px;
             height: 50px;
-        }
-
-        #del:hover {
-            border: 2px;
-            border-style: solid;
-            border-color: var(--farbe);
-        }
-
-        .symbols button {
-            width: 30px;
         }
 
         #sun {
@@ -179,30 +156,132 @@
             font-size: 1.5em;
             opacity: 0.5;
         }
+
+        #previousOutput,
+        #currentOutput {
+            background-color: rgba(0, 0, 0, 0.0);
+            color: white;
+            border: none;
+            text-align: end;
+            width: 160px;
+            padding-right: 10px;
+        }
+
+        #currentOutput {
+            font-size: 25px;
+        }
+
+        #previousOutput {
+            font-size: small;
+            color: #888; /* Graue Farbe für den vorherigen Output */
+        }
+
+
+
+        .light-theme {
+            background: var(--gradient1);
+        }
+
+        .dark-theme {
+            background: var(--gradient2);
+        }
+
+
+        .light-theme #del {
+            background-color: var(--gradient1ButtonColor);
+            color: white;
+        }
+
+        .light-theme #del:hover {
+            border: 2px;
+            border-style: solid;
+            border-color: var(--gradient1BorderColor);
+        }
+
+        .light-theme #del:active {
+            background-color: var(--gradient1BorderColor);
+        }
+
+        .light-theme button:hover {
+            border: 2px;
+            border-style: solid;
+            border-color: var(--gradient1BorderColor);
+        }
+
+        .light-theme button:active {
+            background-color: var(--gradient1BorderColor);
+        }
+
+
+        .dark-theme #del {
+            background-color: var(--gradient2ButtonColor);
+            color: white;
+        }
+
+        .dark-theme #del:hover {
+            border: 2px;
+            border-style: solid;
+            border-color: var(--gradient2BorderColor);
+        }
+
+        .dark-theme #del:active {
+            background-color: var(--gradient2BorderColor);
+        }
+
+        .dark-theme button:hover {
+            border: 2px;
+            border-style: solid;
+            border-color: var(--gradient2BorderColor);
+        }
+
+        .dark-theme button:active {
+            background-color: var(--gradient2BorderColor);
+        }
     </style>
 
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
     <script>
 
-        var isGradient1 = true;
-        var gradient1Button = "#000f9499";
-        var gradient2Button = "#FDBB2D";
-        
-        function changeColor() {
+        let currentTheme = 'light';
 
-            var container = document.getElementById('gradientContainer');
-            var button = document.getElementById('sun');
-            
 
-            var gradient1 = 'linear-gradient(' + 130 + 'deg, #00c8ff 20%, #1c29e0 50%, #000530 100%)';
-            var gradient2 = 'linear-gradient(' + 130 + 'deg, #FDBB2D 20%, #3A1C71 100%)';
+        function toggleTheme() {
+            const body = $('.container');
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.toggleClass('dark-theme', currentTheme === 'dark');
+            body.toggleClass('light-theme', currentTheme === 'light');
+        }
+        let previousOutput = '';
+        let currentOutput = '';
 
-            container.style.background = isGradient1 ? gradient2 : gradient1;
-            button.style.borderColor = isGradient1 ? gradient2Button : gradient1Button;
-            container.style.transition = "5s";
-            
-            
-            isGradient1 = !isGradient1;
-            
+        function updateOutputs() {
+            const previousOutputElement = document.getElementById('previousOutput');
+            const currentOutputElement = document.getElementById('currentOutput');
+
+            previousOutputElement.value = previousOutput;
+            currentOutputElement.value = currentOutput;
+        }
+
+        function appendToOutput(value) {
+            currentOutput += value;
+            updateOutputs();
+        }
+
+        function clearOutput() {
+            previousOutput = currentOutput = '';
+            updateOutputs();
+        }
+
+        function calculateResult() {
+            try {
+                previousOutput = currentOutput;
+                currentOutput = eval(currentOutput);
+            } catch (error) {
+                currentOutput = 'Error';
+            }
+            updateOutputs();
         }
 
     </script>
