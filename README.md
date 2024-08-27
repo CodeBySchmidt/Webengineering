@@ -21,7 +21,7 @@ Dieses Repository enthält die Aufgaben und Übungen, die im Rahmen des Web Engi
 1. **Klone das Repository:**
 
     ```bash
-    git clone https://github.com/dein-benutzername/web-engineering-modul.git
+    git clone https://github.com/dein-benutzername/webengineering.git
     ```
 
 2. **Navigiere in das Verzeichnis:**
